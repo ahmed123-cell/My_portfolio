@@ -65,7 +65,7 @@ nav a:hover {
     position: relative;
     display: flex;
     min-height: 100vh;
-    padding-top: 60px; /* account for fixed nav */
+    padding-top: 60px;
 }
 
 /* ===== Left Side ===== */
@@ -616,261 +616,81 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+/* ===== ScrollReveal: prevent flash before JS kicks in ===== */
+.sr-hidden {
+    visibility: hidden;
+}
+
 /* ===================================================
    RESPONSIVE BREAKPOINTS
    =================================================== */
 
-/* Tablet: 768px - 1024px */
 @media (max-width: 1024px) {
     .hero-left {
         padding: 60px 50px 60px 60px;
     }
-
-    .hero-left h1 {
-        font-size: 38px;
-    }
-
-    .hero-left .greeting {
-        font-size: 24px;
-    }
-
-    .profile-img {
-        width: 280px;
-        height: 280px;
-    }
-
-    .usps-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+    .hero-left h1 { font-size: 38px; }
+    .hero-left .greeting { font-size: 24px; }
+    .profile-img { width: 280px; height: 280px; }
+    .usps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
-/* Mobile: max 768px */
 @media (max-width: 768px) {
-
-    /* Nav: stay fixed, wrap nicely */
-    nav {
-        gap: 6px;
-        padding: 10px 12px;
-    }
-
-    nav a {
-        padding: 7px 13px;
-        font-size: 12px;
-    }
-
-    /* Hero: stack vertically */
-    .hero {
-        flex-direction: column;
-        min-height: auto;
-        padding-top: 55px;
-    }
-
+    nav { gap: 6px; padding: 10px 12px; }
+    nav a { padding: 7px 13px; font-size: 12px; }
+    .hero { flex-direction: column; min-height: auto; padding-top: 55px; }
     .hero-left {
-        width: 100%;
-        padding: 50px 24px 50px 24px;
-        clip-path: none;
-        text-align: center;
-        align-items: center;
+        width: 100%; padding: 50px 24px 50px 24px;
+        clip-path: none; text-align: center; align-items: center;
     }
-
-    .hero-left .greeting {
-        font-size: 22px;
-    }
-
-    .hero-left h1 {
-        font-size: 36px;
-    }
-
-    .hero-left h2 {
-        font-size: 15px;
-    }
-
-    .hero-left p {
-        font-size: 14px;
-    }
-
-    .social {
-        justify-content: center;
-        margin-top: 22px;
-    }
-
-    .hero-right {
-        width: 100%;
-        margin-left: 0;
-        padding: 50px 24px;
-        min-height: 300px;
-    }
-
-    .profile-img {
-        width: 220px;
-        height: 220px;
-    }
-
-    /* Section titles */
-    .section-title {
-        font-size: 20px;
-        letter-spacing: 5px;
-        padding: 14px 24px;
-    }
-
-    /* About */
-    .about-section {
-        padding: 60px 16px;
-    }
-
-    .about-text {
-        font-size: 15px;
-    }
-
-    /* USPs */
-    .usps-section {
-        padding: 50px 16px;
-    }
-
-    .usps-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .usp-title {
-        font-size: 18px;
-    }
-
-    /* Skills */
-    .skills-section {
-        padding: 60px 16px;
-    }
-
-    .category-title {
-        font-size: 19px;
-        margin-bottom: 18px;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-        gap: 14px;
-    }
-
-    .skill-item {
-        padding: 16px 10px;
-    }
-
-    .skill-item img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .skill-item span {
-        font-size: 11px;
-    }
-
-    /* Certificates */
-    .certificates-section {
-        padding: 60px 16px;
-    }
-
-    .certificates-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 36px;
-    }
-
-    /* Projects */
-    .projects-section {
-        padding: 60px 16px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 36px;
-    }
-
-    .project-card img {
-        height: 190px;
-    }
-
-    /* Contact */
-    .contact-section {
-        padding: 60px 16px;
-    }
-
-    .submit-btn {
-        padding: 14px 30px;
-        font-size: 13px;
-        letter-spacing: 2px;
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Decorative */
-    .divider-section {
-        padding: 35px 16px;
-    }
-
-    .pattern-line {
-        width: 50px;
-    }
+    .hero-left .greeting { font-size: 22px; }
+    .hero-left h1 { font-size: 36px; }
+    .hero-left h2 { font-size: 15px; }
+    .hero-left p { font-size: 14px; }
+    .social { justify-content: center; margin-top: 22px; }
+    .hero-right { width: 100%; margin-left: 0; padding: 50px 24px; min-height: 300px; }
+    .profile-img { width: 220px; height: 220px; }
+    .section-title { font-size: 20px; letter-spacing: 5px; padding: 14px 24px; }
+    .about-section { padding: 60px 16px; }
+    .about-text { font-size: 15px; }
+    .usps-section { padding: 50px 16px; }
+    .usps-grid { grid-template-columns: 1fr; gap: 18px; }
+    .usp-title { font-size: 18px; }
+    .skills-section { padding: 60px 16px; }
+    .category-title { font-size: 19px; margin-bottom: 18px; }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 14px; }
+    .skill-item { padding: 16px 10px; }
+    .skill-item img { width: 40px; height: 40px; }
+    .skill-item span { font-size: 11px; }
+    .certificates-section { padding: 60px 16px; }
+    .certificates-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+    .projects-section { padding: 60px 16px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
+    .project-card img { height: 190px; }
+    .contact-section { padding: 60px 16px; }
+    .submit-btn { padding: 14px 30px; font-size: 13px; letter-spacing: 2px; width: 100%; max-width: 100%; }
+    .divider-section { padding: 35px 16px; }
+    .pattern-line { width: 50px; }
 }
 
-/* Extra small: max 480px */
 @media (max-width: 480px) {
-    nav {
-        gap: 5px;
-        padding: 8px 10px;
-    }
-
-    nav a {
-        padding: 6px 10px;
-        font-size: 11px;
-    }
-
-    .hero-left h1 {
-        font-size: 30px;
-    }
-
-    .hero-left .greeting {
-        font-size: 19px;
-    }
-
-    .hero-left h2 {
-        font-size: 13px;
-    }
-
-    .section-title {
-        font-size: 16px;
-        letter-spacing: 4px;
-        padding: 12px 18px;
-        border-width: 3px;
-    }
-
-    .profile-img {
-        width: 180px;
-        height: 180px;
-    }
-
-    .social a {
-        width: 46px;
-        height: 46px;
-        font-size: 18px;
-    }
-
-    .usp-title {
-        font-size: 17px;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
+    nav { gap: 5px; padding: 8px 10px; }
+    nav a { padding: 6px 10px; font-size: 11px; }
+    .hero-left h1 { font-size: 30px; }
+    .hero-left .greeting { font-size: 19px; }
+    .hero-left h2 { font-size: 13px; }
+    .section-title { font-size: 16px; letter-spacing: 4px; padding: 12px 18px; border-width: 3px; }
+    .profile-img { width: 180px; height: 180px; }
+    .social a { width: 46px; height: 46px; font-size: 18px; }
+    .usp-title { font-size: 17px; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation (now fixed at top) -->
+<!-- Navigation -->
 <nav>
     <a href="#about">About Me</a>
     <a href="#skills">Skills</a>
@@ -879,14 +699,11 @@ nav a:hover {
 </nav>
 
 <section class="hero">
-
-    <!-- Left Side -->
     <div class="hero-left">
         <p class="greeting">Hi, I am</p>
         <h1>Ahmed Hazem</h1>
         <h2>Data Scientist / Data Engineer / Business Analyst</h2>
         <a href="#contact" class="btn">Contact Me</a>
-
         <div class="social">
             <a href="mailto:ah1302609@gmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/ahmed123-cell" target="_blank"><i class="fab fa-github"></i></a>
@@ -894,17 +711,13 @@ nav a:hover {
             <a href="https://wa.me/201224582186" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </div>
-
-    <!-- Right Side -->
     <div class="hero-right">
         <div class="profile-img">
             <img src="images/my photo.jpeg" alt="Ahmed Hazem">
         </div>
     </div>
-
 </section>
 
-<!-- Black Separator -->
 <div class="section-separator"></div>
 
 <!-- About Me Section -->
@@ -914,13 +727,11 @@ nav a:hover {
         <p class="about-text">
             I am Ahmed Hazem, a passionate and self-driven data enthusiast with strong skills in Programming, Data Analysis, and Machine Learning. I enjoy transforming raw data into actionable insights and building predictive models that drive real-world decisions. With hands-on experience in Python, SQL, Spark, Power BI, and machine learning, I tackle complex problems while continuously learning and applying new technologies. I am excited to take on projects that leverage data and AI to create business impact.
         </p>
-        
         <div class="explore-divider">
             <div class="divider-line"></div>
             <div class="divider-text">EXPLORE</div>
             <div class="divider-line"></div>
         </div>
-        
         <div class="decorative-pattern">
             <div class="pattern-line"></div>
             <div class="pattern-stripes">
@@ -978,7 +789,7 @@ nav a:hover {
 <section class="skills-section" id="skills">
     <div class="skills-container">
         <div class="section-title">SKILLS</div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Programming & Core</h3>
             <div class="skills-grid">
@@ -1008,7 +819,7 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Machine Learning & AI</h3>
             <div class="skills-grid">
@@ -1030,7 +841,7 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Data Visualization & BI</h3>
             <div class="skills-grid">
@@ -1040,7 +851,7 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Databases & APIs</h3>
             <div class="skills-grid">
@@ -1054,7 +865,7 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Big Data & Pipelines</h3>
             <div class="skills-grid">
@@ -1072,7 +883,8 @@ nav a:hover {
                 </div>
             </div>
         </div>
-        
+
+        <!-- ✅ Model Deployment & MLOps — Streamlit added -->
         <div class="skill-category">
             <h3 class="category-title">Model Deployment & MLOps</h3>
             <div class="skills-grid">
@@ -1088,9 +900,13 @@ nav a:hover {
                     <img src="https://mlflow.org/docs/latest/api_reference/_static/MLflow-logo-final-black.png" alt="MLflow">
                     <span>MLflow</span>
                 </div>
+                <div class="skill-item">
+                    <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit">
+                    <span>Streamlit</span>
+                </div>
             </div>
         </div>
-        
+
         <div class="skill-category">
             <h3 class="category-title">Statistical Analysis</h3>
             <div class="skills-grid">
@@ -1104,6 +920,7 @@ nav a:hover {
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -1122,27 +939,70 @@ nav a:hover {
 <section class="certificates-section" id="certificates">
     <div class="certificates-container">
         <div class="section-title">CERTIFICATES</div>
-        
+
         <div class="certificates-grid">
+
+            <!-- Original 2 cards -->
             <div class="certificate-card">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/SRLLRBH0IC9U" target="_blank">
-                    <img src="images/Screenshot 2026-02-14 234251.png" alt="Coursera Certificate">
+                <a href="Certificates\Advanced Bussines Analytics.pdf" target="_blank">
+                    <img src="images\Advanced Business.png" alt="Coursera Certificate">
                 </a>
                 <div class="certificate-info">
-                    <h4>Coursera Certificate</h4>
-                    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/SRLLRBH0IC9U" target="_blank" class="cert-link">View Certificate →</a>
+                    <h4>Advanced Business Analytics Specialization</h4>
+                    <a href="Certificates\Advanced Bussines Analytics.pdf" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
-            
+
             <div class="certificate-card">
-                <a href="https://www.datacamp.com/statement-of-accomplishment/course/e374d5623392562fc54d3212b1f7fc0fc945cbe0?raw=1" target="_blank">
-                    <img src="images/Screenshot 2026-02-14 234311.png" alt="DataCamp Certificate">
+                <a href="Certificates\MLOPs concepts.pdf" target="_blank">
+                    <img src="images\MLOPs Concepts.png" alt="DataCamp Certificate">
                 </a>
                 <div class="certificate-info">
-                    <h4>DataCamp Certificate</h4>
-                    <a href="https://www.datacamp.com/statement-of-accomplishment/course/e374d5623392562fc54d3212b1f7fc0fc945cbe0?raw=1" target="_blank" class="cert-link">View Certificate →</a>
+                    <h4>MLOPs Concepts</h4>
+                    <a href="Certificates\MLOPs concepts.pdf" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/Introduction to deep learning in python.pdf" target="_blank">
+                    <img src="images\Into to DL.png" alt="DataCamp Certificate 3">
+                </a>
+                <div class="certificate-info">
+                    <h4>Introduction to Deep Learning in Python</h4>
+                    <a href="Certificates/Introduction to deep learning in python.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/Introduction to Airflow in python.pdf" target="_blank">
+                    <img src="images\Intro to Airflow.png" alt="DataCamp Certificate 4">
+                </a>
+                <div class="certificate-info">
+                    <h4>Introduction to Apache Airflow</h4>
+                    <a href="Certificates/Introduction to Airflow in python.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/dbt fundemetals.pdf" target="_blank">
+                    <img src="images/dbt fundementals.png" alt="DataCamp Certificate 5">
+                </a>
+                <div class="certificate-info">
+                    <h4>dbt Fundametals</h4>
+                    <a href="Certificates/dbt fundemetals.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/Big data fundementals with pyspark.pdf" target="_blank">
+                    <img src="images/Big data with pyspark.png" alt="DataCamp Certificate 6">
+                </a>
+                <div class="certificate-info">
+                    <h4>Big Data Fundametals with Python</h4>
+                    <a href="Certificates/Big data fundementals with pyspark.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1162,8 +1022,9 @@ nav a:hover {
 <section class="projects-section" id="projects">
     <div class="projects-container">
         <div class="section-title">PROJECTS</div>
-        
+
         <div class="projects-grid">
+
             <div class="project-card">
                 <a href="#" target="_blank">
                     <img src="images/Student Depressed.jpg" alt="Student Depression Prediction">
@@ -1174,7 +1035,7 @@ nav a:hover {
                     <a href="https://github.com/ahmed123-cell/Student-Depression-Project" target="_blank" class="project-link">View Project →</a>
                 </div>
             </div>
-            
+
             <div class="project-card">
                 <a href="#" target="_blank">
                     <img src="images/telco cutomer churn.webp" alt="Telco Customer Churn">
@@ -1185,6 +1046,19 @@ nav a:hover {
                     <a href="https://github.com/ahmed123-cell/Customer-Churn-Prediction" target="_blank" class="project-link">View Project →</a>
                 </div>
             </div>
+
+            <!-- ✅ New Project Card — fill in your details -->
+            <div class="project-card">
+                <a href="#" target="_blank">
+                    <img src="images\Olist.jpg" alt="Your New Project">
+                </a>
+                <div class="project-info">
+                    <h4>Olist Sales Analysis</h4>
+                    <p class="project-description">Analyzed a Brazilian e-commerce dataset to extract business insights and support decision making. Cleaned and transformed data using power query, queried data with SQL, and built interactive Power BI dashboard to visualize key metrics</p>
+                    <a href="https://github.com/ahmed123-cell/Olist-Sales-performance" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1204,11 +1078,9 @@ nav a:hover {
 <section class="contact-section" id="contact">
     <div class="contact-container">
         <div class="section-title">LET'S BUILD SCALABLE DATA SOLUTIONS</div>
-        
         <p class="contact-description">
             I design reliable data pipelines, build predictive models, and deliver business insights that drive measurable impact. Let's discuss how I can support your data project.
         </p>
-        
         <div class="decorative-pattern">
             <div class="pattern-line"></div>
             <div class="pattern-stripes">
@@ -1216,7 +1088,6 @@ nav a:hover {
             </div>
             <div class="pattern-line"></div>
         </div>
-        
         <form class="contact-form">
             <div class="form-group">
                 <input type="text" placeholder="ENTER YOUR NAME*" required>
@@ -1234,6 +1105,92 @@ nav a:hover {
         </form>
     </div>
 </section>
+
+<!-- ===== ScrollReveal CDN ===== -->
+<script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+<script>
+    // ── Base config ──────────────────────────────────────────────
+    const sr = ScrollReveal({
+        distance: '40px',
+        duration: 700,
+        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        reset: false
+    });
+
+    // ── Hero ─────────────────────────────────────────────────────
+    sr.reveal('.hero-left .greeting',   { origin: 'left',   delay: 100 });
+    sr.reveal('.hero-left h1',          { origin: 'left',   delay: 200 });
+    sr.reveal('.hero-left h2',          { origin: 'left',   delay: 300 });
+    sr.reveal('.hero-left .btn',        { origin: 'bottom', delay: 400 });
+    sr.reveal('.hero-left .social',     { origin: 'bottom', delay: 500 });
+    sr.reveal('.profile-img',           { origin: 'right',  delay: 300, distance: '60px' });
+
+    // ── About ─────────────────────────────────────────────────────
+    sr.reveal('.about-section .section-title', { origin: 'top',    delay: 100 });
+    sr.reveal('.about-text',                   { origin: 'bottom', delay: 200 });
+    sr.reveal('.explore-divider',              { origin: 'bottom', delay: 300 });
+    sr.reveal('.about-section .decorative-pattern', { origin: 'bottom', delay: 400 });
+
+    // ── USP cards — staggered ─────────────────────────────────────
+    sr.reveal('.usp-card', {
+        origin: 'bottom',
+        delay: 100,
+        interval: 120
+    });
+
+    // ── Skills section title ──────────────────────────────────────
+    sr.reveal('.skills-section .section-title', { origin: 'top', delay: 100 });
+
+    // ── Skill categories — fade up one by one ────────────────────
+    sr.reveal('.skill-category', {
+        origin: 'bottom',
+        delay: 100,
+        interval: 150
+    });
+
+    // ── Individual skill items — staggered ───────────────────────
+    sr.reveal('.skill-item', {
+        origin: 'bottom',
+        delay: 50,
+        interval: 60,
+        distance: '20px'
+    });
+
+    // ── Certificates ─────────────────────────────────────────────
+    sr.reveal('.certificates-section .section-title', { origin: 'top', delay: 100 });
+    sr.reveal('.certificate-card', {
+        origin: 'bottom',
+        delay: 100,
+        interval: 150
+    });
+
+    // ── Projects ─────────────────────────────────────────────────
+    sr.reveal('.projects-section .section-title', { origin: 'top', delay: 100 });
+    sr.reveal('.project-card', {
+        origin: 'bottom',
+        delay: 100,
+        interval: 150
+    });
+
+    // ── Contact ───────────────────────────────────────────────────
+    sr.reveal('.contact-section .section-title', { origin: 'top',    delay: 100 });
+    sr.reveal('.contact-description',            { origin: 'bottom', delay: 200 });
+    sr.reveal('.contact-section .decorative-pattern', { origin: 'bottom', delay: 300 });
+    sr.reveal('.form-group', {
+        origin: 'bottom',
+        delay: 100,
+        interval: 120
+    });
+    sr.reveal('.submit-btn', { origin: 'bottom', delay: 100 });
+
+    // ── Divider decorations ───────────────────────────────────────
+    sr.reveal('.divider-section .decorative-pattern', {
+        origin: 'bottom',
+        delay: 100,
+        distance: '20px'
+    });
+</script>
 
 </body>
 </html>
