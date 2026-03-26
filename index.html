@@ -686,6 +686,12 @@ nav a:hover {
     .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    emailjs.init("RfK0cW80_0OmwLPD2");
+</script>
+
 </head>
 
 <body>
@@ -1088,21 +1094,24 @@ nav a:hover {
             </div>
             <div class="pattern-line"></div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="contact-form">
             <div class="form-group">
-                <input type="text" placeholder="ENTER YOUR NAME*" required>
+                <input type="text" name="name" placeholder="ENTER YOUR NAME*" required>
             </div>
             <div class="form-group">
-                <input type="email" placeholder="ENTER YOUR EMAIL*" required>
+                <input type="email" name="email" placeholder="ENTER YOUR EMAIL*" required>
             </div>
             <div class="form-group">
-                <input type="tel" placeholder="PHONE NUMBER">
+                <input type="tel" name="phone" placeholder="PHONE NUMBER">
             </div>
             <div class="form-group">
-                <textarea placeholder="YOUR MESSAGE*" rows="6" required></textarea>
+                <textarea           name="message"    placeholder="YOUR MESSAGE*" rows="6" required></textarea>
             </div>
             <button type="submit" class="submit-btn">START A PROJECT</button>
         </form>
+        <p id="success-msg" style="display:none; margin-top: 24px; font-size: 16px; font-weight: 600; color: #111; letter-spacing: 1px;">
+            ✅ Your message has been sent successfully!
+        </p>
     </div>
 </section>
 
@@ -1189,6 +1198,30 @@ nav a:hover {
         origin: 'bottom',
         delay: 100,
         distance: '20px'
+    });
+</script>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = document.querySelector('.submit-btn');
+        const successMsg = document.getElementById('success-msg');
+
+        btn.disabled = true;
+        btn.textContent = 'SENDING...';
+
+        emailjs.sendForm('service_yecdssr', 'template_8gwka86', this)
+            .then(() => {
+                btn.style.display = 'none';
+                successMsg.style.display = 'block';
+                this.reset();
+            })
+            .catch((error) => {
+                btn.disabled = false;
+                btn.textContent = 'START A PROJECT';
+                alert('Something went wrong. Please try again.\n' + error.text);
+            });
     });
 </script>
 
