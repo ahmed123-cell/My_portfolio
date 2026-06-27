@@ -616,6 +616,101 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+/* ===== Training Section ===== */
+.training-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+}
+
+.training-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.training-card {
+    display: flex;
+    align-items: stretch;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+    margin-top: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+}
+
+.training-image {
+    width: 280px;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    border-right: 5px solid #111;
+}
+
+.training-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.training-content {
+    padding: 40px 45px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.training-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid #111;
+}
+
+.training-achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.training-achievements li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.training-achievements li::before {
+    content: "▸";
+    color: #111;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .training-card { flex-direction: column; }
+    .training-image { width: 100%; min-width: unset; height: 240px; border-right: none; border-bottom: 5px solid #111; }
+    .training-content { padding: 28px 24px; }
+    .training-content h3 { font-size: 20px; }
+    .training-achievements li { font-size: 14px; }
+}
+
 /* ===== ScrollReveal: prevent flash before JS kicks in ===== */
 .sr-hidden {
     visibility: hidden;
@@ -699,6 +794,7 @@ nav a:hover {
 <!-- Navigation -->
 <nav>
     <a href="#about">About Me</a>
+    <a href="#training">Training</a>
     <a href="#skills">Skills</a>
     <a href="#certificates">Certificates</a>
     <a href="#projects">Projects</a>
@@ -748,9 +844,43 @@ nav a:hover {
     </div>
 </section>
 
+<!-- Training Section -->
+<section class="training-section" id="training">
+    <div class="training-container">
+        <div class="section-title">TRAINING</div>
+
+        <div class="training-card">
+            <!-- Replace src with your actual image path -->
+            <div class="training-image">
+                <img src="images/Digital Egypt Pioneers Initiative.jpg" alt="Training">
+            </div>
+            <div class="training-content">
+                <h3>DEPI — Microsoft Data Engineer Track</h3>
+                <ul class="training-achievements">
+                    <li>Participated in the (Nov 2025), covering Python, dbt, Airflow, APIs, web scraping, data engineering concepts (ELT, data warehouses & lakes), cloud, big data, and deployment.</li>
+                    <li>Developed soft skills including time management, communication, and freelancing strategies as part of the program curriculum.</li>
+                    <li>Served as Team Leader of a 6-member team that built an end-to-end Credit Risk Analysis solution — combining ELT pipelines with dbt, a Power BI dashboard, an ML default prediction model, and a real-time web application to support data-driven loan decisions and minimize defaults.</li>
+                    <li>🏆 Our project was ranked #1 Best Project in the cohort, and I was awarded the official Graduate Certificate.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Decorative Divider -->
+<section class="divider-section">
+    <div class="decorative-pattern">
+        <div class="pattern-line"></div>
+        <div class="pattern-stripes">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="pattern-line"></div>
+    </div>
+</section>
+
 <!-- USPs Section -->
-<section class="usps-section">
-    <div class="usps-container">
+<section class="usps-section">    <div class="usps-container">
         <div class="usps-grid">
             <div class="usp-card">
                 <h3 class="usp-title">🧠 Data & ML Expertise</h3>
@@ -845,6 +975,14 @@ nav a:hover {
                     <img src="https://media.designrush.com/agencies/51660/conversions/Prophet-logo-profile.jpg" alt="Prophet">
                     <span>Prophet</span>
                 </div>
+                <div class="skill-item">
+                    <img src="https://lightgbm.readthedocs.io/en/latest/_images/LightGBM_logo_black_text.svg" alt="LightGBM">
+                    <span>LightGBM</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://miro.medium.com/v2/resize:fit:602/1*d3R7xA7KH9mi-nrmp0t2UA.png" alt="SHAP">
+                    <span>SHAP</span>
+                </div>
             </div>
         </div>
 
@@ -869,6 +1007,14 @@ nav a:hover {
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI">
                     <span>FastAPI</span>
                 </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://duckdb.org/images/logo-dl/DuckDB_Logo.png" alt="DuckDB">
+                    <span>DuckDB</span>
+                </div>
             </div>
         </div>
 
@@ -886,6 +1032,15 @@ nav a:hover {
                 <div class="skill-item">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/AirflowLogo.png" alt="Apache Airflow">
                     <span>Apache Airflow</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt">
+                    <span>dbt</span>
+                </div>
+
+                <div class="skill-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" alt="Databricks">
+                    <span>Databricks</span>
                 </div>
             </div>
         </div>
@@ -910,6 +1065,10 @@ nav a:hover {
                     <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit">
                     <span>Streamlit</span>
                 </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                    <span>Azure</span>
+                </div>
             </div>
         </div>
 
@@ -923,6 +1082,20 @@ nav a:hover {
                 <div class="skill-item">
                     <img src="https://www.statsmodels.org/stable/_images/statsmodels-logo-v2-horizontal.svg" alt="Statsmodels">
                     <span>Statsmodels</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-category">
+            <h3 class="category-title">Extracting Data</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="https://requests.readthedocs.io/en/latest/_static/requests-sidebar.png" alt="Requests">
+                    <span>Requests</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://www.crummy.com/software/BeautifulSoup/bs4/doc/_images/6.1.jpg" alt="Beautiful Soup">
+                    <span>Beautiful Soup</span>
                 </div>
             </div>
         </div>
@@ -960,42 +1133,42 @@ nav a:hover {
             </div>
 
             <div class="certificate-card">
-                <a href="Certificates\MLOPs concepts.pdf" target="_blank">
-                    <img src="images\MLOPs Concepts.png" alt="DataCamp Certificate">
+                <a href="Certificates\IBM Data Science.pdf" target="_blank">
+                    <img src="images\IBM Data Science.png" alt="DataCamp Certificate">
+                </a>
+                <div class="certificate-info">
+                    <h4>IBM Data Science</h4>
+                    <a href="Certificates\IBM Data Science.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/Data Science for Marketing.pdf" target="_blank">
+                    <img src="images\Data Science For Marketing.png" alt="DataCamp Certificate 3">
+                </a>
+                <div class="certificate-info">
+                    <h4>Data Science For Marketing</h4>
+                    <a href="Certificates/Data Science for Marketing.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <a href="Certificates/MLOPs concepts.pdf" target="_blank">
+                    <img src="images\MLOPs Concepts.png" alt="DataCamp Certificate 4">
                 </a>
                 <div class="certificate-info">
                     <h4>MLOPs Concepts</h4>
-                    <a href="Certificates\MLOPs concepts.pdf" target="_blank" class="cert-link">View Certificate →</a>
+                    <a href="Certificates/MLOPs concepts.pdf" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
 
             <div class="certificate-card">
                 <a href="Certificates/Introduction to deep learning in python.pdf" target="_blank">
-                    <img src="images\Into to DL.png" alt="DataCamp Certificate 3">
+                    <img src="images/Into to DL.png" alt="DataCamp Certificate 5">
                 </a>
                 <div class="certificate-info">
-                    <h4>Introduction to Deep Learning in Python</h4>
+                    <h4>Intro to Deep Learning</h4>
                     <a href="Certificates/Introduction to deep learning in python.pdf" target="_blank" class="cert-link">View Certificate →</a>
-                </div>
-            </div>
-
-            <div class="certificate-card">
-                <a href="Certificates/Introduction to Airflow in python.pdf" target="_blank">
-                    <img src="images\Intro to Airflow.png" alt="DataCamp Certificate 4">
-                </a>
-                <div class="certificate-info">
-                    <h4>Introduction to Apache Airflow</h4>
-                    <a href="Certificates/Introduction to Airflow in python.pdf" target="_blank" class="cert-link">View Certificate →</a>
-                </div>
-            </div>
-
-            <div class="certificate-card">
-                <a href="Certificates/dbt fundemetals.pdf" target="_blank">
-                    <img src="images/dbt fundementals.png" alt="DataCamp Certificate 5">
-                </a>
-                <div class="certificate-info">
-                    <h4>dbt Fundametals</h4>
-                    <a href="Certificates/dbt fundemetals.pdf" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
 
@@ -1032,13 +1205,13 @@ nav a:hover {
         <div class="projects-grid">
 
             <div class="project-card">
-                <a href="https://github.com/ahmed123-cell/Student-Depression-Project" target="_blank">
-                    <img src="images/Student Depressed.jpg" alt="Student Depression Prediction">
+                <a href="https://github.com/DEPI-maker1525/credit-risk-analysis" target="_blank">
+                    <img src="images/Home credit risk.png" alt="End-to-End Workflow Credit Risk Analysis">
                 </a>
                 <div class="project-info">
-                    <h4>Student Depression Prediction</h4>
-                    <p class="project-description">Developed a data-driven classification model to analyze factors influencing student depression, achieving 84% accuracy using numpy, pandas, matplotlib, seaborn, scikit learn, Streamlit, and FastAPI</p>
-                    <a href="https://github.com/ahmed123-cell/Student-Depression-Project" target="_blank" class="project-link">View Project →</a>
+                    <h4>End-to-End Workflow Credit Risk Analysis</h4>
+                    <p class="project-description">End-to-end credit risk analysis solution combining Data Engineering (ELT with dbt), Power BI dashboard, Machine Learning default prediction model, and a real-time web application to support data-driven loan decisions and minimize defaults.</p>
+                    <a href="https://github.com/DEPI-maker1525/credit-risk-analysis" target="_blank" class="project-link">View Project →</a>
                 </div>
             </div>
 
@@ -1048,7 +1221,7 @@ nav a:hover {
                 </a>
                 <div class="project-info">
                     <h4>Telco Customer Churn Prediction</h4>
-                    <p class="project-description">Built a classification model to predict customer churn in telecom company achieving 81% recall score using numpy, pandas, matplotlib, seaborn, scikit-learn, FastAPI</p>
+                    <p class="project-description">Analyzed key factors driving customer churn in the telecom sector and developed a Machine Learning model to predict churn. The model was deployed as a production-ready API using FastAPI for real-time predictions.</p>
                     <a href="https://github.com/ahmed123-cell/Customer-Churn-Prediction" target="_blank" class="project-link">View Project →</a>
                 </div>
             </div>
@@ -1062,6 +1235,42 @@ nav a:hover {
                     <h4>Olist Sales Analysis</h4>
                     <p class="project-description">Analyzed a Brazilian e-commerce dataset to extract business insights and support decision making. Cleaned and transformed data using power query, queried data with SQL, and built interactive Power BI dashboard to visualize key metrics</p>
                     <a href="https://github.com/ahmed123-cell/Olist-Sales-performance" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project Card 4 — replace image/text/link -->
+            <div class="project-card">
+                <a href="https://github.com/ahmed123-cell/Online-Retail" target="_blank">
+                    <img src="images/customer-segmentation.jpg" alt="Project 4">
+                </a>
+                <div class="project-info">
+                    <h4>Online Retail Customer Segmentation</h4>
+                    <p class="project-description">Customer segmentation for online retail using RFM analysis and clustering algorithms (KMeans, DBSCAN, Hierarchical Model).</p>
+                    <a href="https://github.com/ahmed123-cell/Online-Retail" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project Card 5 — replace image/text/link -->
+            <div class="project-card">
+                <a href="https://github.com/ahmed123-cell/Retail-Store-Inventory-Forecasting" target="_blank">
+                    <img src="images/Retail Forecasting.avif" alt="Project 5">
+                </a>
+                <div class="project-info">
+                    <h4>Retail Store Inventory Forecasting & Optimization</h4>
+                    <p class="project-description">End-to-end retail solution for demand forecasting, inventory optimization, and dynamic pricing. Features EDA, time series analysis, and XGBoost (best performer) for predictions, plus safety stock/reorder recommendations to cut costs and boost revenue.</p>
+                    <a href="https://github.com/ahmed123-cell/Retail-Store-Inventory-Forecasting" target="_blank" class="project-link">View Project →</a>
+                </div>
+            </div>
+
+            <!-- Project Card 6 — replace image/text/link -->
+            <div class="project-card">
+                <a href="https://github.com/ahmed123-cell/DVD-Rental-Analysis" target="_blank">
+                    <img src="images/dvd_image.jpg" alt="Project 6">
+                </a>
+                <div class="project-info">
+                    <h4>SQL Practice - DVD Rental Analysis</h4>
+                    <p class="project-description">Demonstrated strong SQL skills by solving 30 structured data analysis problems on the DVD Rental database, covering Easy, Medium, and Hard difficulty levels.</p>
+                    <a href="https://github.com/ahmed123-cell/DVD-Rental-Analysis" target="_blank" class="project-link">View Project →</a>
                 </div>
             </div>
 
@@ -1140,6 +1349,10 @@ nav a:hover {
     sr.reveal('.about-text',                   { origin: 'bottom', delay: 200 });
     sr.reveal('.explore-divider',              { origin: 'bottom', delay: 300 });
     sr.reveal('.about-section .decorative-pattern', { origin: 'bottom', delay: 400 });
+
+    // ── Training ──────────────────────────────────────────────────
+    sr.reveal('.training-section .section-title', { origin: 'top',   delay: 100 });
+    sr.reveal('.training-card',                   { origin: 'bottom', delay: 200 });
 
     // ── USP cards — staggered ─────────────────────────────────────
     sr.reveal('.usp-card', {
